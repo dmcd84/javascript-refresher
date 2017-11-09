@@ -74,15 +74,27 @@ var makeNegative = function(number) {
 }
 
 var numberOfPalindromes = function(array) {
-  return 'Write your method here';
+  var count = 0;
+  for(i = 0; i < array.length; i++){
+    if (array[i] == array[i].split("").reverse().join("")) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 var shortestWord = function(array) {
-  return 'Write your method here';
+  var shortest = array.reduce(function(a, b) {
+   return a.length <= b.length ? a : b;
+ })
+  return shortest;
 }
 
 var longestWord = function(array) {
-  return 'Write your method here';
+  var longest = array.reduce(function(a, b) {
+   return a.length <= b.length ? b : a;
+ })
+  return longest;
 }
 
 var sumNumbers = function(array) {
@@ -94,11 +106,11 @@ var sumNumbers = function(array) {
 }
 
 var repeatElements = function(array) {
-  return 'Write your method here';
+  return array.concat(array);
 }
 
 var stringToNumber = function(string) {
-  return 'Write your method here';
+  return parseInt(string);
 }
 
 var calculateAverage = function(array) {
@@ -129,11 +141,19 @@ var convertArrayToObject = function(array) {
 }
 
 var getAllLetters = function(array) {
-  return 'Write your method here';
+  letters = array.toString().split('').sort();
+  var unique = letters.filter(function(elem, index, self) {
+    return index == self.indexOf(elem);
+  })
+  return unique.filter(function(a){return a !== ','});
 }
 
 var swapKeysAndValues = function(object) {
-  return 'Write your method here';
+  var swapped = {};
+  for(var key in object){
+    swapped[object[key]] = key;
+  }
+  return swapped;
 }
 
 var sumKeysAndValues = function(object) {
