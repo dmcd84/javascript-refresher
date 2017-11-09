@@ -1,33 +1,49 @@
 var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
-
-var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
+  return array.filter(function(word){
+    return (word[0] == 'a' || word[0] == 'A');
+  });
 }
 
 var selectElementsStartingWithVowel = function(array) {
-  return 'Write your method here';
+  return array.filter(function(word) {
+    if ((/^[aeiou]$/i).test(word[0])==true){
+      return word;
+    };
+  });
 }
 
 var removeNullElements = function(array) {
-  return 'Write your method here';
+  return array.filter(function(n) {
+    return n != undefined;
+  });
 }
 
 var removeNullAndFalseElements = function(array) {
-  return 'Write your method here';
+  return array.filter(function(n) {
+    return n != null && n !== false;
+  });
 }
 
 var reverseWordsInArray = function(array) {
-  return 'Write your method here';
+  results = [];
+  for(i = 0; i < array.length; i++){
+    results.push(array[i].split("").reverse().join(""));
+  }
+  return results;
 }
 
 var everyPossiblePair = function(array) {
-  return 'Write your method here';
+  var results = [];
+  for (var i = 0; i < array.sort().length - 1; i++) {
+    for (var j = i + 1; j < array.sort().length; j++) {
+      results.push([array[i], array[j]]);
+    }
+  }
+  return results;
 }
 
 var allElementsExceptFirstThree = function(array) {
-  return 'Write your method here';
+  return array.slice(3);
 }
 
 var addElementToBeginning = function(array, element) {
@@ -35,7 +51,17 @@ var addElementToBeginning = function(array, element) {
 }
 
 var sortByLastLetter = function(array) {
-  return 'Write your method here';
+  return array.sort(function(a,b){
+    var lastA = a.charAt(a.length - 1);
+    var lastB = b.charAt(b.length - 1);
+    if (lastA > lastB) {
+        return 1;
+    } else if (lastA < lastB) {
+        return -1;
+    } else {
+        return 0;
+    }
+  })
 }
 
 var getFirstHalf = function(string) {
@@ -75,7 +101,13 @@ var calculateAverage = function(array) {
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
-  return 'Write your method here';
+   var results = [];
+   for (var i = 0; i < array.length; i++) {
+     while (array[i] <= 5) {
+       results.push(array[i]);
+     }
+   }
+   return results;
 }
 
 var convertArrayToObject = function(array) {
@@ -99,7 +131,7 @@ var removeCapitals = function(string) {
 }
 
 var roundUp = function(number) {
-  return 'Write your method here';
+  return Math.ceil(number);
 }
 
 var formatDateNicely = function(date) {
