@@ -47,7 +47,8 @@ var allElementsExceptFirstThree = function(array) {
 }
 
 var addElementToBeginning = function(array, element) {
-  return 'Write your method here';
+  array.unshift(element);
+  return array;
 }
 
 var sortByLastLetter = function(array) {
@@ -65,11 +66,11 @@ var sortByLastLetter = function(array) {
 }
 
 var getFirstHalf = function(string) {
-  return 'Write your method here';
+  return string.substring(0, Math.ceil(string.length/2));
 }
 
 var makeNegative = function(number) {
-  return 'Write your method here';
+  return number >= 0 ? number * -1 : number;
 }
 
 var numberOfPalindromes = function(array) {
@@ -85,7 +86,11 @@ var longestWord = function(array) {
 }
 
 var sumNumbers = function(array) {
-  return 'Write your method here';
+  sum = 0;
+  for(i = 0; i < array.length; i++){
+    sum += array[i];
+  }
+  return sum;
 }
 
 var repeatElements = function(array) {
@@ -97,21 +102,30 @@ var stringToNumber = function(string) {
 }
 
 var calculateAverage = function(array) {
-  return 'Write your method here';
+  sum = 0;
+  for(i = 0; i < array.length; i++){
+    sum += array[i];
+  }
+  return sum/array.length;
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
    var results = [];
    for (var i = 0; i < array.length; i++) {
-     while (array[i] <= 5) {
+     if (array[i] <= 5) {
        results.push(array[i]);
+     } else if (array[i] > 5){
+       return results
      }
    }
-   return results;
+   return results
 }
 
 var convertArrayToObject = function(array) {
-  return 'Write your method here';
+  var obj = {};
+  for (var i = 0; i < array.length; i+=2)
+    obj[array[i]] = array[i+1];
+  return obj;
 }
 
 var getAllLetters = function(array) {
@@ -143,7 +157,13 @@ var getDomainName = function(string) {
 }
 
 var titleize = function(string) {
-  return 'Write your method here';
+  // var words = string.split(" ");
+  // var result = [];
+  // for(i=0; i<words.length; i++){
+  //   result.push(words[i].charAt(0).toUpperCase()+words[i].slice(1));
+  // }
+  // console.log(words);
+  // return result.join(" ");
 }
 
 var checkForSpecialCharacters = function(string) {
