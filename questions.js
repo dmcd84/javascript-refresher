@@ -161,7 +161,7 @@ var sumKeysAndValues = function(object) {
 }
 
 var removeCapitals = function(string) {
-  return 'Write your method here';
+  return string.replace( /[^a-z _]/g, '' );;
 }
 
 var roundUp = function(number) {
@@ -169,11 +169,12 @@ var roundUp = function(number) {
 }
 
 var formatDateNicely = function(date) {
-  return 'Write your method here';
+  console.log(date);
 }
 
 var getDomainName = function(string) {
-  return 'Write your method here';
+  var temp = string.replace(/.*@/, '').split('.com');
+  return temp[temp.length - 2];
 }
 
 var titleize = function(string) {
@@ -187,15 +188,15 @@ var titleize = function(string) {
 }
 
 var checkForSpecialCharacters = function(string) {
-  return 'Write your method here';
+  return (string.match(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/)) ? true : false;
 }
 
 var squareRoot = function(number) {
-  return 'Write your method here';
+  return Math.sqrt(number);
 }
 
 var factorial = function(number) {
-  return 'Write your method here';
+  return (number != 1) ? number * factorial(number -1) : 1;
 }
 
 var findAnagrams = function(string) {
@@ -203,7 +204,7 @@ var findAnagrams = function(string) {
 }
 
 var convertToCelsius = function(number) {
-  return 'Write your method here';
+  return Math.ceil((number - 32)*(5/9));
 }
 
 var letterPosition = function(array) {
